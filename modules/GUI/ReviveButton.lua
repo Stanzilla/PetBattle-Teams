@@ -5,7 +5,7 @@ local _
 local function OnEvent(self,event)
 	if event == "SPELL_UPDATE_COOLDOWN"  then
 		local start, duration, enable = GetSpellCooldown(self.spellID)
-		CooldownFrame_SetTimer(self.Cooldown, start, duration, enable)
+		CooldownFrame_Set(self.Cooldown, start, duration, enable)
 		if ( GameTooltip:GetOwner() == self ) then
 			--cheat and use blizzards tooltip setup
 			PetJournalHealPetButton_OnEnter(self)
@@ -45,7 +45,7 @@ function GUI:CreateReviveButton(name,parent)
 	button:SetHighlightTexture("Interface\\Buttons\\ButtonHilight-Square","ADD")
 	
 	button.Cooldown = CreateFrame("Cooldown", name.."Cooldown",button, "CooldownFrameTemplate")
-	CooldownFrame_SetTimer(button.Cooldown, start, duration, enable)
+	CooldownFrame_Set(button.Cooldown, start, duration, enable)
 	
 	button:RegisterEvent("SPELL_UPDATE_COOLDOWN")
 	button:RegisterEvent("PLAYER_REGEN_DISABLED")

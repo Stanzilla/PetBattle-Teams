@@ -1,7 +1,7 @@
-## Interface: 60100
+## Interface: 70000
 ## Title: PetBattleTeams
 ## Author: Nullberri
-## Version: 3.2.9
+## Version: 3.3.0
 ## X-Category: Pet Battles
 ## X-Localizations: enUS
 ## SavedVariables: PetBattleTeamsDB,PetBattleTeamsSettings

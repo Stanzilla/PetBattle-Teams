@@ -1,10 +1,11 @@
 ## Interface: 70000
 ## Title: PetBattleTeams
 ## Author: Nullberri
-## Version: 3.3.0
+## Version: @project-version@
+## Notes: Create unlimited teams of pets and quickly switch between them in the pet journal
 ## X-Category: Pet Battles
 ## X-Localizations: enUS
-## SavedVariables: PetBattleTeamsDB,PetBattleTeamsSettings
+## SavedVariables: PetBattleTeamsDB, PetBattleTeamsSettings
 
 libs\LibStub\LibStub.lua
 libs\CallbackHandler-1.0\CallbackHandler-1.0.xml

@@ -1,0 +1,37 @@
+externals:
+    PetBattleTeams/libs/AceAddon-3.0:
+        svn://svn.wowace.com/wow/ace3/mainline/trunk/AceAddon-3.0
+    PetBattleTeams/libs/AceComm-3.0:
+        svn://svn.wowace.com/wow/ace3/mainline/trunk/AceComm-3.0
+    PetBattleTeams/libs/AceConfig-3.0:
+        svn://svn.wowace.com/wow/ace3/mainline/trunk/AceConfig-3.0
+    PetBattleTeams/libs/AceConsole-3.0:
+        svn://svn.wowace.com/wow/ace3/mainline/trunk/AceConsole-3.0
+    PetBattleTeams/libs/AceDB-3.0:
+        svn://svn.wowace.com/wow/ace3/mainline/trunk/AceDB-3.0    
+    PetBattleTeams/libs/AceEvent-3.0:
+        svn://svn.wowace.com/wow/ace3/mainline/trunk/AceEvent-3.0
+    PetBattleTeams/libs/AceGUI-3.0:
+        svn://svn.wowace.com/wow/ace3/mainline/trunk/AceGUI-3.0
+    PetBattleTeams/libs/AceLocale-3.0:
+        svn://svn.wowace.com/wow/ace3/mainline/trunk/AceLocale-3.0
+    PetBattleTeams/libs/LibStub: 
+        svn://svn.wowace.com/wow/ace3/mainline/trunk/LibStub    
+    PetBattleTeams/libs/CallbackHandler-1.0:
+        svn://svn.wowace.com/wow/callbackhandler/mainline/trunk/CallbackHandler-1.0
+    PetBattleTeams/libs/LibSharedMedia-3.0:
+        svn://svn.wowace.com/wow/libsharedmedia-3-0/mainline/trunk/LibSharedMedia-3.0
+    PetBattleTeams/libs/LibPetJournal-2.0:
+        http://hg.curseforge.com/wow/libpetjournal-2-0/mainline
+
+enable-nolib-creation:
+    no
+
+move-folders:
+	PetBattleTeams/PetBattleTeams: PetBattleTeams
+
+ignore:
+    - .gitignore
+	- changelog
+	- README.md
+    - todo.txt

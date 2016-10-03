@@ -1,7 +1,4 @@
 PetBattleTeams = LibStub("AceAddon-3.0"):NewAddon("PetBattleTeams")
-local _
-
-
 
 --handles addon stuff instansciates objects
 function PetBattleTeams:OnInitialize()
@@ -25,33 +22,33 @@ function PetBattleTeams.slashHandler(msg, chatPromptFrame)
    msg = string.lower(msg)
    if msg == "lock frame" then
 		GUI:SetLocked(true)
-		print("PetBattle Teams: Frame Locked")
+		print("PetBattleTeams: Frame Locked")
    elseif msg == "unlock frame" then
 		GUI:SetLocked(false)
-		print("PetBattle Teams: Frame unlocked")
+		print("PetBattleTeams: Frame unlocked")
    elseif msg == "attach" then
 		GUI:SetAttached(true)
-		print("PetBattle Teams: Frame Attached")
+		print("PetBattleTeams: Frame Attached")
 	elseif msg == "toggle" then
 		GUI:SetAttached(not GUI:GetAttached())
 		if GUI:GetAttached() then
-			print("PetBattle Teams: Frame Attached")
+			print("PetBattleTeams: Frame Attached")
 		else
-			print("PetBattle Teams: Frame Detached")
+			print("PetBattleTeams: Frame Detached")
 		end
    elseif msg == "detach" then
 		GUI:SetAttached(false)
-		print("PetBattle Teams: Frame Detached")
+		print("PetBattleTeams: Frame Detached")
    elseif msg == "lock teams" then
 		TeamManager:SetLockStateAllTeams(true)
-		print("PetBattle Teams: Teams Locked")
+		print("PetBattleTeams: Teams Locked")
    elseif msg == "unlock teams" then
 		TeamManager:SetLockStateAllTeams(false)
-		print("PetBattle Teams: Teams Unlocked")
+		print("PetBattleTeams: Teams Unlocked")
    elseif msg == "reset teams" then
 		TeamManager:ResetTeams()
 		GUI:ResetScrollBar()
-		print("PetBattle Teams: Teams Reset")
+		print("PetBattleTeams: Teams Reset")
    elseif msg == "reset ui" then
 		GUI:ResetUI()
 		self:GetModule("TeamManager"):ResetUI()
@@ -87,33 +84,38 @@ StaticPopupDialogs["PBT_TEAM_DELETE"] = {
 StaticPopupDialogs["PBT_TEAM_RENAME"] = {
 	preferredIndex = STATICPOPUP_NUMDIALOGS,
 	text = "PetBattleTeams:|nEnter a name for |cffffd200%s|r.",
-	 hasEditBox = 1,
+	hasEditBox = 1,
 	button1 = OKAY,
 	button2 = DEFAULT,
 	OnShow = function(self)
 		local teamManager = PetBattleTeams:GetModule("TeamManager")
-		local _,_,customName = teamManager:GetTeamName(self.data)
+		local _, _, customName = teamManager:GetTeamName(self.data)
 		if customName then
-			local text = _G[self:GetName().."EditBox"]:SetText(customName)
+			self.editBox:SetText(customName)
 		end
+		self.editBox:SetAutoFocus(true)
 	end,
 	OnAccept = function(self)
-		local text = _G[self:GetName().."EditBox"]:GetText()
+		local text = self.editBox:GetText()
 		local teamManager = PetBattleTeams:GetModule("TeamManager")
-		teamManager:SetTeamName(self.data,text)
+		teamManager:SetTeamName(self.data, text)
 	end,
 	OnCancel = function(self)
 		local teamManager = PetBattleTeams:GetModule("TeamManager")
-		teamManager:SetTeamName(self.data,nil)
+		teamManager:SetTeamName(self.data, nil)
+	end,
+	EditBoxOnEnterPressed = function(self) 
+		StaticPopup_OnClick(self:GetParent(), 1) 
 	end,
 	timeout = 0,
 	exclusive = 1,
 	hideOnEscape = 1,
+	enterClicksFirstButton = true,
 }
 
 StaticPopupDialogs["PBT_IMPORT_TEAMS"] = {
 	preferredIndex = STATICPOPUP_NUMDIALOGS,
-	text = "PetBattleTeams:|nWould you like to import your pets from previous versions of PetBattle Teams?",
+	text = "PetBattleTeams:|nWould you like to import your pets from previous versions of PetBattleTeams?",
 	button1 = OKAY,
 	button2 = CANCEL,
 	OnAccept = function(self)

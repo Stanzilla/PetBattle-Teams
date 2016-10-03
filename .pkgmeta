@@ -1,3 +1,5 @@
+package-as: PetBattleTeams
+
 externals:
     PetBattleTeams/libs/AceAddon-3.0:
         svn://svn.wowace.com/wow/ace3/mainline/trunk/AceAddon-3.0
@@ -31,3 +33,4 @@ ignore:
 	- changelog
 	- README.md
     - todo.txt
+    - modules\GUI\New folder\

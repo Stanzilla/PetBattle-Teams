@@ -21,6 +21,9 @@ externals:
         svn://svn.wowace.com/wow/libsharedmedia-3-0/mainline/trunk/LibSharedMedia-3.0
     PetBattleTeams/libs/LibPetJournal-2.0:
         http://hg.curseforge.com/wow/libpetjournal-2-0/mainline
+    PetBattleTeams/libs/LibPetBreedInfo-1.0: 
+        https://github.com/Stanzilla/LibPetBreedInfo-1.0.git
+
 
 enable-nolib-creation:
     no

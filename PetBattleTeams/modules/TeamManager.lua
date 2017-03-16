@@ -57,17 +57,17 @@ local function OnUpdate(self,elapsed)
             return
         else
             if not pcall(function()
-                    if ability1 ~= abilities[1] then
-                        C_PetJournal.SetAbility(self.step, 1, abilities[1])
-                        return
-                    elseif ability2 ~= abilities[2] then
-                        C_PetJournal.SetAbility(self.step, 2, abilities[2])
-                        return
-                    elseif ability3 ~= abilities[3] then
-                        C_PetJournal.SetAbility(self.step, 3, abilities[3])
-                        return
-                    end
-                end) then
+                if ability1 ~= abilities[1] then
+                    C_PetJournal.SetAbility(self.step, 1, abilities[1])
+                    return
+                elseif ability2 ~= abilities[2] then
+                    C_PetJournal.SetAbility(self.step, 2, abilities[2])
+                    return
+                elseif ability3 ~= abilities[3] then
+                    C_PetJournal.SetAbility(self.step, 3, abilities[3])
+                    return
+                end
+            end) then
                 C_PetJournal.SetPetLoadOutInfo(self.step,EMPTY_PET)
                 self.step = self.step +1
                 return

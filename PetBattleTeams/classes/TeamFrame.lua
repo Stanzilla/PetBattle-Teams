@@ -124,7 +124,7 @@ function PetBattleTeamsFrame:New()
 
     return petBattleTeamsFrame
 end
-    PetBattleTeams.PetBattleTeamsFrame = PetBattleTeamsFrame
+PetBattleTeams.PetBattleTeamsFrame = PetBattleTeamsFrame
 
 
 function PetBattleTeamsFrame:Update()

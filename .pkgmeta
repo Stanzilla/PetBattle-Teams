@@ -8,7 +8,7 @@ externals:
     PetBattleTeams/libs/AceConfig-3.0:
         https://repos.wowace.com/wow/ace3/trunk/AceConfig-3.0
     PetBattleTeams/libs/AceConfigDialog-3.0:
-        https://repos.wowace.com/wow/ace3/trunk/AceConfigDialog-3.0
+        https://repos.wowace.com/wow/ace3/trunk/AceConfig-3.0/AceConfigDialog-3.0
     PetBattleTeams/libs/AceDB-3.0:
         https://repos.wowace.com/wow/ace3/trunk/AceDB-3.0
     PetBattleTeams/libs/AceConsole-3.0:

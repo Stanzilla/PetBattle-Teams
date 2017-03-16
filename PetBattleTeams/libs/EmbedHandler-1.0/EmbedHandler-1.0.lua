@@ -19,67 +19,67 @@ along with EmbedHandler. If not, see <http://www.gnu.org/licenses/>.
 
 local Lib = LibStub:NewLibrary('EmbedHandler-1.0', 4)
 if not Lib then
-	return
+    return
 else
-	Lib.embeds = Lib.embeds or {}
-	Lib.empty = Lib.empty or {}
+    Lib.embeds = Lib.embeds or {}
+    Lib.empty = Lib.empty or {}
 end
 
 local type, pairs, unpack, select = type, pairs, unpack, select --speed up!
 local Embeds, Empty = Lib.embeds, Lib.empty
 
 local function Embed(self, target, data)
-	for k,v in pairs(self) do
-		local isFunc = type(v) == 'function'
-		if (isFunc and not data[k]) or (data[k] and not isFunc) then
-			target[k] = self[k]
-		end
-	end
+    for k,v in pairs(self) do
+        local isFunc = type(v) == 'function'
+        if (isFunc and not data[k]) or (data[k] and not isFunc) then
+            target[k] = self[k]
+        end
+    end
 end
 
 local function SpecificEmbed(self, target, data)
-	for i,k in ipairs(data) do
-		target[k] = self[k]
-	end
+    for i,k in ipairs(data) do
+        target[k] = self[k]
+    end
 end
 
 local function SaveData(self, target, data)
-	Embeds[self] = Embeds[self] or {}
-	Embeds[self][target] = data
+    Embeds[self] = Embeds[self] or {}
+    Embeds[self][target] = data
 end
 
 
 --[[ API ]]--
 
 function Lib:Embed(target, ...)
-	local data = {}
-	for i = 1, select('#', ...) do
-		data[select(i, ...)] = true
-	end
-	
-	SaveData(self, target, data)
-	Embed(self, target, data)
+    local data = {}
+    for i = 1, select('#', ...) do
+        data[select(i, ...)] = true
+    end
+
+    SaveData(self, target, data)
+    Embed(self, target, data)
 end
 
 function Lib:SpecificEmbed(target, ...)
-	data = {specific = 1, ...}
-	
-	SpecificEmbed(self, target, data)
-	SaveData(self, target, data)
+    local data = {specific = 1, ...}
+
+    SpecificEmbed(self, target, data)
+    SaveData(self, target, data)
 end
 
 function Lib:IterateEmbeds()
-	return pairs(Embeds[self] or Empty)
+    return pairs(Embeds[self] or Empty)
 end
-	
+
 function Lib:UpdateEmbeds()
-	for target, data in Lib.IterateEmbeds(self) do
-		if data.specific ~= 1 then
-			Embed(self, target, data)
-		else
-			SpecificEmbed(self, target, data)
-		end
-	end
+    for target, data in Lib.IterateEmbeds(self) do
+        if data.specific ~= 1 then
+            Embed(self, target, data)
+        else
+            SpecificEmbed(self, target, data)
+        end
+    end
 end
 
 Lib:UpdateEmbeds()

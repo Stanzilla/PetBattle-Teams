@@ -1,17 +1,15 @@
 local PetBattleTeams = LibStub("AceAddon-3.0"):GetAddon("PetBattleTeams")
 local GUI = PetBattleTeams:GetModule("GUI")
-local _
-
 
 function GUI:CreateLockTeamsButton()
-	
-	local self = CreateFrame("CheckButton")
-	self:SetChecked(false);
-	self:SetSize(32,32)
-	self:SetNormalTexture("Interface\\Buttons\\LockButton-Locked-Up")
-	self:SetPushedTexture("Interface\\Buttons\\LockButton-Unlocked-Down")
-	self:SetHighlightTexture("Interface\\Buttons\\UI-Panel-MinimizeButton-Highlight","ADD")
-	self:SetCheckedTexture("Interface\\Buttons\\LockButton-Unlocked-Up")
-	
-	return self
+
+    local lockTeamsButton = CreateFrame("CheckButton")
+    lockTeamsButton:SetChecked(false);
+    lockTeamsButton:SetSize(32,32)
+    lockTeamsButton:SetNormalTexture("Interface\\Buttons\\LockButton-Locked-Up")
+    lockTeamsButton:SetPushedTexture("Interface\\Buttons\\LockButton-Unlocked-Down")
+    lockTeamsButton:SetHighlightTexture("Interface\\Buttons\\UI-Panel-MinimizeButton-Highlight","ADD")
+    lockTeamsButton:SetCheckedTexture("Interface\\Buttons\\LockButton-Unlocked-Up")
+
+    return lockTeamsButton
 end

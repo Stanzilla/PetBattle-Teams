@@ -2,7 +2,7 @@
 ## Title: PetBattleTeams
 ## Author: Nullberri
 ## Version: @project-version@
-## Notes: Create unlimited teams of pets and quickly switch between them in the pet journal
+## Notes: Create unlimited teams of pets and quickly switch between them in the Pet Journal
 ## X-Category: Pet Battles
 ## X-Localizations: enUS
 ## SavedVariables: PetBattleTeamsDB, PetBattleTeamsSettings

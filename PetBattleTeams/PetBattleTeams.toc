@@ -1,4 +1,4 @@
-## Interface: 70300
+## Interface: 80000
 ## Title: PetBattleTeams
 ## Author: Nullberri
 ## Version: @project-version@

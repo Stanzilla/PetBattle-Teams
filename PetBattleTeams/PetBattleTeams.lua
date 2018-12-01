@@ -93,7 +93,7 @@ StaticPopupDialogs["PBT_TEAM_RENAME"] = {
         if customName then
             self.editBox:SetText(customName)
         end
-        self.editBox:SetAutoFocus(true)
+        self.editBox:SetAutoFocus(1)
     end,
     OnAccept = function(self)
         local text = self.editBox:GetText()
